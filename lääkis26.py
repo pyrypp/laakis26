@@ -10,30 +10,33 @@ matematiikka_value = st.radio(
     "Matematiikka, pitkä",
     ["L (37,9)", "E (34,1)"],
     key="matematiikka",
-    horizontal=True
+    horizontal=True,
+    index=1
 )
 
 äidinkieli_value = st.radio(
     "Äidinkieli",
     ["L (36,1)", "E (32,5)"],
     key="äidinkieli",
-    horizontal=True
+    horizontal=True,
+    index=1
 )
 
 biologia_value = st.radio(
     "Biologia",
     ["L (34,0)", "E (30,6)"],
     key="biologia",
-    horizontal=True
+    horizontal=True,
+    index=1
 )
 
 kemia_value = st.radio(
     "Kemia",
     ["L (32,3)", "E (29,1)"],
     key="kemia",
-    horizontal=True
+    horizontal=True,
+    index=1
 )
-
 
 st.subheader("Kaksi muuta ainetta (joista vähintään toinen on ainereaali)")
 placeholder = st.empty()
@@ -42,28 +45,32 @@ pitkä_kieli_value = st.radio(
     "Pitkä kieli",
     ["L (28,3)", "E (25,5)", "0"],
     key="pitkä_kieli",
-    horizontal=True
+    horizontal=True,
+    index=2
 )
 
 keskipitkä_kieli_value = st.radio(
     "Keskipitkä kieli",
     ["L (25,0)", "E (20,0)", "0"],
     key="keskipitkä_kieli",
-    horizontal=True
+    horizontal=True,
+    index=2
 )
 
 fysiikka_value = st.radio(
     "Fysiikka",
     ["L (24,5)", "E (19,6)", "0"],
     key="fysiikka",
-    horizontal=True
+    horizontal=True,
+    index=2
 )
 
 psykologia_value = st.radio(
     "Psykologia",
     ["L (24,5)", "E (19,6)", "0"],
     key="psykologia",
-    horizontal=True
+    horizontal=True,
+    index=2
 )
 
 def label_to_float(input_string):
@@ -86,6 +93,8 @@ psykologia_value_num = label_to_float(psykologia_value)
 # Sum up all the button values
 total_sum = (matematiikka_value_num + äidinkieli_value_num + biologia_value_num + kemia_value_num +
              pitkä_kieli_value_num + keskipitkä_kieli_value_num + fysiikka_value_num + psykologia_value_num)
+
+total_sum = round(total_sum, 1)
 
 total_sum_str = str(total_sum).replace(".", ",")
 
